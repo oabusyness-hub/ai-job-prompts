@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Job-Hunt Prompts</title>
-    <!-- 美しい日本語フォントを読み込む -->
+    <title>AI Job-Hunt & Company Portal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -16,175 +15,144 @@
             --border-color: #e5e5e5;
             --accent-color: #0056b3;
         }
-        body { 
-            font-family: 'Noto Sans JP', sans-serif; 
-            background-color: var(--bg-color); 
-            color: var(--primary-color); 
-            margin: 0; 
-            padding: 0; 
-            line-height: 1.6;
-        }
-        header {
-            background: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-        h1 { 
-            font-size: 28px; 
-            font-weight: 700; 
-            margin: 0 0 10px 0; 
-            letter-spacing: 1px;
-        }
-        .description { 
-            color: var(--secondary-color); 
-            font-size: 14px; 
-            margin: 0; 
-        }
-        .container { 
-            max-width: 1000px; 
-            margin: 40px auto; 
-            padding: 0 20px; 
-        }
-        .controls { 
-            margin-bottom: 40px; 
-        }
-        .search-box { 
-            width: 100%; 
-            padding: 15px 20px; 
-            font-size: 16px; 
-            border: 1px solid var(--border-color); 
-            border-radius: 30px; 
-            box-sizing: border-box; 
-            font-family: inherit;
-            transition: all 0.3s ease;
-            margin-bottom: 25px;
-            background: white;
-        }
-        .search-box:focus { 
-            border-color: var(--primary-color); 
-            outline: none; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .filters { 
-            display: flex; 
-            gap: 10px; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-        }
-        /* チェックボックスを隠してオシャレなボタンにする魔法 */
-        .filters input[type="checkbox"] {
-            display: none;
-        }
-        .filters label { 
-            cursor: pointer; 
-            background: white; 
-            color: var(--secondary-color);
-            padding: 8px 18px; 
-            border-radius: 30px; 
-            font-size: 13px; 
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-            transition: all 0.2s ease; 
-        }
-        .filters input[type="checkbox"]:checked + label {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-        .filters label:hover { 
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-color); color: var(--primary-color); margin: 0; padding: 0; line-height: 1.6; }
+        header { background: white; padding: 40px 20px; text-align: center; border-bottom: 1px solid var(--border-color); }
+        h1 { font-size: 28px; font-weight: 700; margin: 0 0 10px 0; letter-spacing: 1px; }
+        .description { color: var(--secondary-color); font-size: 14px; margin: 0; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
         
-        .news-list { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px; 
-        }
-        .news-card { 
-            background: white;
-            padding: 25px; 
-            border: 1px solid var(--border-color); 
-            text-decoration: none; 
-            color: inherit; 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.3s ease; 
-        }
-        .news-card:hover { 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.04); 
-            transform: translateY(-3px); 
-        }
-        .news-title { 
-            font-size: 16px; 
-            margin: 0 0 20px 0; 
-            font-weight: 700;
-            line-height: 1.5; 
-        }
-        .news-meta { 
-            font-size: 12px; 
-            color: var(--secondary-color); 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            border-top: 1px solid var(--border-color);
-            padding-top: 15px;
-        }
-        .tag { 
-            font-weight: 500;
-            color: var(--accent-color);
-        }
-        .empty-message {
-            grid-column: 1 / -1;
-            text-align: center;
-            color: var(--secondary-color);
-            padding: 40px;
-        }
+        .search-box { width: 100%; padding: 15px 20px; font-size: 16px; border: 1px solid var(--border-color); border-radius: 30px; box-sizing: border-box; font-family: inherit; transition: all 0.3s ease; margin-bottom: 25px; background: white; }
+        .search-box:focus { border-color: var(--primary-color); outline: none; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        
+        .filter-section { background: white; padding: 25px; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 30px; }
+        .filter-group { display: flex; align-items: flex-start; margin-bottom: 15px; }
+        .filter-group:last-child { margin-bottom: 0; }
+        .filter-label { font-weight: 700; font-size: 14px; width: 80px; padding-top: 8px; flex-shrink: 0; color: var(--primary-color); }
+        
+        .filters { display: flex; gap: 8px; flex-wrap: wrap; flex-grow: 1; }
+        .filters input[type="checkbox"], .filters input[type="radio"] { display: none; }
+        .filters label { cursor: pointer; background: var(--bg-color); color: var(--secondary-color); padding: 8px 16px; border-radius: 30px; font-size: 13px; font-weight: 500; border: 1px solid var(--border-color); transition: all 0.2s ease; }
+        .filters input:checked + label { background: var(--primary-color); color: white; border-color: var(--primary-color); }
+        .filters label:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        
+        .news-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        .news-card { background: white; padding: 25px; border: 1px solid var(--border-color); text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; border-radius: 8px; }
+        .news-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.04); transform: translateY(-3px); border-color: #cbd5e1; }
+        .news-title { font-size: 16px; margin: 0 0 15px 0; font-weight: 700; line-height: 1.5; }
+        
+        /* 株価・IR情報バッジ */
+        .stock-info { background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 12px; border-radius: 6px; font-size: 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .stock-price { font-weight: bold; color: #0f172a; }
+        .stock-change.up { color: #16a34a; font-weight: bold; }
+        .stock-change.down { color: #dc2626; font-weight: bold; }
+
+        .news-meta { font-size: 12px; color: var(--secondary-color); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 15px; }
+        
+        .tag-container { display: flex; align-items: center; gap: 8px; }
+        .tag { font-weight: 500; color: var(--accent-color); }
+        
+        .source-badge { padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 11px; }
+        .source-badge.web { background: #e0f2fe; color: #0284c7; }
+        .source-badge.youtube { background: #fee2e2; color: #dc2626; }
+        .source-badge.ir { background: #f3e8ff; color: #7e22ce; }
+        
+        .empty-message { grid-column: 1 / -1; text-align: center; color: var(--secondary-color); padding: 40px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>AI Job-Hunt Prompts</h1>
-    <p class="description">最新のAIプロンプトを活用して、就職活動をスマートに。</p>
+    <h1>AI Job-Hunt & Company Portal</h1>
+    <p class="description">AIプロンプトの活用法と、連携企業の最新IR・株価動向をスマートに。</p>
 </header>
 
 <div class="container">
-    <div class="controls">
-        <input type="text" id="searchInput" class="search-box" placeholder="キーワードで記事を検索...">
-        <div class="filters" id="checkboxContainer">
-            <!-- いただいた8つのタグを配置しています -->
-            <input type="checkbox" id="tag-intern" value="intern" checked><label for="tag-intern">インターン対策</label>
-            <input type="checkbox" id="tag-es" value="es" checked><label for="tag-es">ES作成・添削</label>
-            <input type="checkbox" id="tag-interview" value="interview" checked><label for="tag-interview">面接対策</label>
-            <input type="checkbox" id="tag-gd" value="gd" checked><label for="tag-gd">GD</label>
-            <input type="checkbox" id="tag-research" value="research" checked><label for="tag-research">企業研究</label>
-            <input type="checkbox" id="tag-self-analysis" value="self_analysis" checked><label for="tag-self-analysis">自己分析</label>
-            <input type="checkbox" id="tag-ir-news" value="ir_news" checked><label for="tag-ir-news">IR・企業ニュース要約</label>
-            <input type="checkbox" id="tag-prompt" value="prompt" checked><label for="tag-prompt">有用AIプロンプト</label>
+    <input type="text" id="searchInput" class="search-box" placeholder="キーワードや企業名（任天堂など）で検索...">
+    
+    <div class="filter-section">
+        <div class="filter-group">
+            <div class="filter-label">ソース</div>
+            <div class="filters" id="sourceContainer">
+                <input type="checkbox" id="source-web" value="web" checked><label for="source-web">📄 Web記事</label>
+                <input type="checkbox" id="source-youtube" value="youtube" checked><label for="source-youtube">🎥 YouTube</label>
+                <input type="checkbox" id="source-ir" value="ir" checked><label for="source-ir">📈 企業IR・株価</label>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <div class="filter-label">並び替え</div>
+            <div class="filters" id="sortContainer">
+                <input type="radio" name="sort" id="sort-newest" value="newest" checked><label for="sort-newest">新着順</label>
+                <input type="radio" name="sort" id="sort-relevance" value="relevance"><label for="sort-relevance">関連度順</label>
+                <input type="radio" name="sort" id="sort-oldest" value="oldest"><label for="sort-oldest">古い順</label>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <div class="filter-label">期 間</div>
+            <div class="filters" id="timeframeContainer">
+                <input type="radio" name="time" id="time-all" value="all" checked><label for="time-all">すべて</label>
+                <input type="radio" name="time" id="time-1w" value="7"><label for="time-1w">過去1週間</label>
+                <input type="radio" name="time" id="time-2w" value="14"><label for="time-2w">過去2週間</label>
+                <input type="radio" name="time" id="time-1m" value="30"><label for="time-1m">過去1ヶ月</label>
+                <input type="radio" name="time" id="time-1y" value="365"><label for="time-1y">過去1年</label>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filters" id="checkboxContainer">
+                <input type="checkbox" id="tag-intern" value="intern" checked><label for="tag-intern">インターン対策</label>
+                <input type="checkbox" id="tag-es" value="es" checked><label for="tag-es">ES作成・添削</label>
+                <input type="checkbox" id="tag-interview" value="interview" checked><label for="tag-interview">面接対策</label>
+                <input type="checkbox" id="tag-gd" value="gd" checked><label for="tag-gd">GD</label>
+                <input type="checkbox" id="tag-research" value="research" checked><label for="tag-research">企業研究</label>
+                <input type="checkbox" id="tag-self-analysis" value="self_analysis" checked><label for="tag-self-analysis">自己分析</label>
+                <input type="checkbox" id="tag-ir-news" value="ir_news" checked><label for="tag-ir-news">IR要約</label>
+                <input type="checkbox" id="tag-prompt" value="prompt" checked><label for="tag-prompt">有用プロンプト</label>
+                <input type="checkbox" id="tag-company" value="company" checked><label for="tag-company">連携企業・IR</label>
+            </div>
         </div>
     </div>
 
-    <div id="newsContainer" class="news-list">
-        <!-- 記事がここに表示されます -->
-    </div>
+    <div id="newsContainer" class="news-list"></div>
 </div>
 
 <script>
     let newsData = [];
-
     const newsContainer = document.getElementById('newsContainer');
     const searchInput = document.getElementById('searchInput');
     const checkboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
+    const timeRadios = document.querySelectorAll('#timeframeContainer input[type="radio"]');
+    const sortRadios = document.querySelectorAll('#sortContainer input[type="radio"]');
+    const sourceCheckboxes = document.querySelectorAll('#sourceContainer input[type="checkbox"]');
 
     function renderNews() {
         const searchText = searchInput.value.toLowerCase();
         const activeCategories = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
+        const activeSources = Array.from(sourceCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
+        const selectedTime = document.querySelector('#timeframeContainer input[type="radio"]:checked').value;
+        const selectedSort = document.querySelector('#sortContainer input[type="radio"]:checked').value;
+        const now = new Date();
 
-        const filteredNews = newsData.filter(news => {
-            return news.title.toLowerCase().includes(searchText) && activeCategories.includes(news.category);
+        let filteredNews = newsData.filter(news => {
+            const matchText = news.title.toLowerCase().includes(searchText) || (news.companyName && news.companyName.toLowerCase().includes(searchText));
+            const matchCategory = activeCategories.includes(news.category);
+            const matchSource = activeSources.includes(news.source);
+            
+            let matchTime = true;
+            if (selectedTime !== 'all') {
+                const articleDate = new Date(news.date);
+                const diffDays = (now - articleDate) / (1000 * 60 * 60 * 24);
+                matchTime = diffDays <= parseInt(selectedTime);
+            }
+            return matchText && matchCategory && matchSource && matchTime;
+        });
+
+        filteredNews.sort((a, b) => {
+            if (selectedSort === 'newest') return new Date(b.date) - new Date(a.date);
+            if (selectedSort === 'oldest') return new Date(a.date) - new Date(b.date);
+            if (selectedSort === 'relevance') return a.rank - b.rank;
         });
 
         newsContainer.innerHTML = '';
@@ -193,10 +161,37 @@
             card.href = news.url;
             card.target = "_blank";
             card.className = 'news-card';
+            
+            let sourceBadge = '<span class="source-badge web">📄 Web</span>';
+            if (news.source === 'youtube') sourceBadge = '<span class="source-badge youtube">🎥 YouTube</span>';
+            if (news.source === 'ir') sourceBadge = '<span class="source-badge ir">📈 企業IR</span>';
+
+            // 株価情報がある場合はカード内に専用バッジを表示
+            let stockHtml = '';
+            if (news.stockPrice) {
+                const changeClass = news.stockChange >= 0 ? 'up' : 'down';
+                const sign = news.stockChange >= 0 ? '+' : '';
+                stockHtml = `
+                    <div class="stock-info">
+                        <span>${news.companyName} (${news.code})</span>
+                        <div>
+                            <span class="stock-price">${news.stockPrice}円</span>
+                            <span class="stock-change ${changeClass}">(${sign}${news.stockChange}円)</span>
+                        </div>
+                    </div>
+                `;
+            }
+
             card.innerHTML = `
-                <h2 class="news-title">${news.title}</h2>
+                <div>
+                    ${stockHtml}
+                    <h2 class="news-title">${news.title}</h2>
+                </div>
                 <div class="news-meta">
-                    <span class="tag"># ${news.categoryName}</span>
+                    <div class="tag-container">
+                        <span class="tag"># ${news.categoryName}</span>
+                        ${sourceBadge}
+                    </div>
                     <span>${news.date}</span>
                 </div>
             `;
@@ -210,6 +205,9 @@
 
     searchInput.addEventListener('input', renderNews);
     checkboxes.forEach(cb => cb.addEventListener('change', renderNews));
+    timeRadios.forEach(radio => radio.addEventListener('change', renderNews));
+    sortRadios.forEach(radio => radio.addEventListener('change', renderNews));
+    sourceCheckboxes.forEach(cb => cb.addEventListener('change', renderNews));
 
     fetch('news_data.json')
         .then(response => response.json())
@@ -218,7 +216,6 @@
             renderNews();
         })
         .catch(error => {
-            console.error("エラー:", error);
             newsContainer.innerHTML = '<p class="empty-message">データの読み込みに失敗しました。</p>';
         });
 </script>
