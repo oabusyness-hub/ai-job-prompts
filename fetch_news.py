@@ -16,11 +16,11 @@ prompt_urls = {
     "prompt": ("有用AIプロンプト", "ChatGPT プロンプト 就活")
 }
 
-# 2. 連携企業のサンプルリスト（ここを今後150社に増やしていけます）
+# 2. 連携企業のサンプルリスト（シンプルに企業名だけで検索します）
 companies = [
-    {"name": "任天堂", "code": "7974", "query": "任天堂 IR 決算"},
-    {"name": "ソニーグループ", "code": "6758", "query": "ソニーグループ IR 決算"},
-    {"name": "トヨタ自動車", "code": "7203", "query": "トヨタ自動車 IR 決算"}
+    {"name": "任天堂", "code": "7974", "query": "任天堂"},
+    {"name": "ソニーグループ", "code": "6758", "query": "ソニーグループ"},
+    {"name": "トヨタ自動車", "code": "7203", "query": "トヨタ自動車"}
 ]
 
 news_data = []
@@ -62,32 +62,30 @@ for src in sources:
         except Exception as e:
             print(f"プロンプト取得エラー ({category}): {e}")
 
-# --- B. 連携企業のIR・株価情報の取得 ---
+# --- B. 連携企業のIR・ニュース情報の取得 ---
 for comp in companies:
     try:
-        # 1. GoogleニュースからIR情報を取得
-        ir_url = f"https://news.google.com/rss/search?q={urllib.parse.quote(comp['query'] + ' when:6m')}&hl=ja&gl=JP&ceid=JP:ja"
+        # 検索条件をシンプルにしてヒット率を上げる
+        ir_url = f"https://news.google.com/rss/search?q={urllib.parse.quote(comp['query'])}&hl=ja&gl=JP&ceid=JP:ja"
         req = urllib.request.Request(ir_url, headers={'User-Agent': 'Mozilla/5.0'})
         
         with urllib.request.urlopen(req) as response:
             root = ET.fromstring(response.read())
             
-            # 2. Yahoo!ファイナンスから簡易的に株価を取得するスクレイピング
+            # 株価取得（失敗してもエラーで止まらないようにする）
             stock_price = "---"
-            stock_change = 0
             try:
                 yf_url = f"https://finance.yahoo.co.jp/quote/{comp['code']}.T"
                 yf_req = urllib.request.Request(yf_url, headers={'User-Agent': 'Mozilla/5.0'})
                 with urllib.request.urlopen(yf_req) as yf_res:
                     html_content = yf_res.read().decode('utf-8')
-                    # 株価の数値を取り出す簡易正規表現
                     price_match = re.search(r'itemprop="price"[^>]*content="([0-9,\.]+)"', html_content)
                     if price_match:
                         stock_price = price_match.group(1)
             except:
                 pass
 
-            for index, item in enumerate(root.findall('./channel/item')[:3]):
+            for index, item in enumerate(root.findall('./channel/item')[:5]):
                 title = item.find('title').text
                 link = item.find('link').text
                 pub_date = item.find('pubDate').text
@@ -107,13 +105,13 @@ for comp in companies:
                     "companyName": comp['name'],
                     "code": comp['code'],
                     "stockPrice": stock_price,
-                    "stockChange": 0 # 実データ取得できない場合は0
+                    "stockChange": 0
                 })
     except Exception as e:
-        print(f"企業IR取得エラー ({comp['name']}): {e}")
+        print(f"企業ニュース取得エラー ({comp['name']}): {e}")
 
 # データを保存
 with open('news_data.json', 'w', encoding='utf-8') as f:
     json.dump(news_data, f, ensure_ascii=False, indent=2)
 
-print("AIプロンプト ＆ 企業IR・株価データの統合取得が完了しました！")
+print("データの取得が完了しました！")
