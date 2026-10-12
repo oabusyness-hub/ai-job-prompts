@@ -2,9 +2,10 @@ import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 import json
+import re
 
-# 指定された8つのタグに合わせた検索キーワードの設定
-urls = {
+# 1. 従来のAIプロンプト検索設定
+prompt_urls = {
     "intern": ("インターン対策", "ChatGPT インターン 就活"),
     "es": ("ES作成・添削", "ChatGPT ES 添削 就活"),
     "interview": ("面接対策", "ChatGPT 面接 就活"),
@@ -15,36 +16,104 @@ urls = {
     "prompt": ("有用AIプロンプト", "ChatGPT プロンプト 就活")
 }
 
-news_data = []
+# 2. 連携企業のサンプルリスト（ここを今後150社に増やしていけます）
+companies = [
+    {"name": "任天堂", "code": "7974", "query": "任天堂 IR 決算"},
+    {"name": "ソニーグループ", "code": "6758", "query": "ソニーグループ IR 決算"},
+    {"name": "トヨタ自動車", "code": "7203", "query": "トヨタ自動車 IR 決算"}
+]
 
-for category, (cat_name, keyword) in urls.items():
-    try:
-        encoded_keyword = urllib.parse.quote(keyword)
-        url = f"https://news.google.com/rss/search?q={encoded_keyword}&hl=ja&gl=JP&ceid=JP:ja"
-        
-        req = urllib.request.Request(url)
-        with urllib.request.urlopen(req) as response:
-            xml_data = response.read()
-            root = ET.fromstring(xml_data)
+news_data = []
+month_map = {"Jan":"01", "Feb":"02", "Mar":"03", "Apr":"04", "May":"05", "Jun":"06", "Jul":"07", "Aug":"08", "Sep":"09", "Oct":"10", "Nov":"11", "Dec":"12"}
+
+# --- A. プロンプト記事（Web & YouTube）の取得 ---
+sources = [
+    {"type": "web", "query_suffix": "when:1y"},
+    {"type": "youtube", "query_suffix": "when:1y site:youtube.com"}
+]
+
+for src in sources:
+    for category, (cat_name, keyword) in prompt_urls.items():
+        try:
+            search_query = f"{keyword} {src['query_suffix']}"
+            url = f"https://news.google.com/rss/search?q={urllib.parse.quote(search_query)}&hl=ja&gl=JP&ceid=JP:ja"
             
-            # 各カテゴリ最新の4件を取得
-            for item in root.findall('./channel/item')[:4]:
+            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req) as response:
+                root = ET.fromstring(response.read())
+                for index, item in enumerate(root.findall('./channel/item')[:6]):
+                    title = item.find('title').text
+                    link = item.find('link').text
+                    pub_date = item.find('pubDate').text
+                    
+                    day = pub_date[5:7]
+                    month = month_map[pub_date[8:11]]
+                    year = pub_date[12:16]
+                    
+                    news_data.append({
+                        "title": title,
+                        "category": category,
+                        "categoryName": cat_name,
+                        "date": f"{year}/{month}/{day}",
+                        "url": link,
+                        "rank": index,
+                        "source": src["type"]
+                    })
+        except Exception as e:
+            print(f"プロンプト取得エラー ({category}): {e}")
+
+# --- B. 連携企業のIR・株価情報の取得 ---
+for comp in companies:
+    try:
+        # 1. GoogleニュースからIR情報を取得
+        ir_url = f"https://news.google.com/rss/search?q={urllib.parse.quote(comp['query'] + ' when:6m')}&hl=ja&gl=JP&ceid=JP:ja"
+        req = urllib.request.Request(ir_url, headers={'User-Agent': 'Mozilla/5.0'})
+        
+        with urllib.request.urlopen(req) as response:
+            root = ET.fromstring(response.read())
+            
+            # 2. Yahoo!ファイナンスから簡易的に株価を取得するスクレイピング
+            stock_price = "---"
+            stock_change = 0
+            try:
+                yf_url = f"https://finance.yahoo.co.jp/quote/{comp['code']}.T"
+                yf_req = urllib.request.Request(yf_url, headers={'User-Agent': 'Mozilla/5.0'})
+                with urllib.request.urlopen(yf_req) as yf_res:
+                    html_content = yf_res.read().decode('utf-8')
+                    # 株価の数値を取り出す簡易正規表現
+                    price_match = re.search(r'itemprop="price"[^>]*content="([0-9,\.]+)"', html_content)
+                    if price_match:
+                        stock_price = price_match.group(1)
+            except:
+                pass
+
+            for index, item in enumerate(root.findall('./channel/item')[:3]):
                 title = item.find('title').text
                 link = item.find('link').text
                 pub_date = item.find('pubDate').text
                 
+                day = pub_date[5:7]
+                month = month_map[pub_date[8:11]]
+                year = pub_date[12:16]
+                
                 news_data.append({
                     "title": title,
-                    "category": category,
-                    "categoryName": cat_name,
-                    "date": pub_date[5:16],
-                    "url": link
+                    "category": "company",
+                    "categoryName": f"{comp['name']} IR",
+                    "date": f"{year}/{month}/{day}",
+                    "url": link,
+                    "rank": index,
+                    "source": "ir",
+                    "companyName": comp['name'],
+                    "code": comp['code'],
+                    "stockPrice": stock_price,
+                    "stockChange": 0 # 実データ取得できない場合は0
                 })
     except Exception as e:
-        print(f"エラー ({category}): {e}")
+        print(f"企業IR取得エラー ({comp['name']}): {e}")
 
-# 集めたデータを保存する
+# データを保存
 with open('news_data.json', 'w', encoding='utf-8') as f:
     json.dump(news_data, f, ensure_ascii=False, indent=2)
 
-print("8カテゴリの記事取得が完了しました！")
+print("AIプロンプト ＆ 企業IR・株価データの統合取得が完了しました！")
