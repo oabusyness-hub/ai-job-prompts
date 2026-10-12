@@ -11,12 +11,15 @@
         .description { text-align: center; color: #4a5568; margin-bottom: 20px; }
         .controls { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
         .search-box { width: 100%; padding: 12px; font-size: 16px; border: 2px solid #cbd5e0; border-radius: 8px; box-sizing: border-box; }
+        .search-box:focus { border-color: #3182ce; outline: none; }
         .filters { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-        .filters label { cursor: pointer; background: #edf2f7; padding: 8px 16px; border-radius: 20px; font-size: 14px; }
+        .filters label { cursor: pointer; background: #edf2f7; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: 0.2s; }
+        .filters label:hover { background: #e2e8f0; }
         .news-list { display: grid; gap: 15px; }
-        .news-card { padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: inherit; display: block; background: #ffffff; }
-        .news-title { font-size: 18px; margin: 0 0 12px 0; color: #2b6cb0; }
-        .news-meta { font-size: 13px; color: #718096; display: flex; justify-content: space-between; }
+        .news-card { padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: inherit; display: block; transition: 0.2s; background: #ffffff; }
+        .news-card:hover { border-color: #3182ce; box-shadow: 0 4px 6px rgba(49, 130, 206, 0.1); transform: translateY(-2px); }
+        .news-title { font-size: 18px; margin: 0 0 12px 0; color: #2b6cb0; line-height: 1.4; }
+        .news-meta { font-size: 13px; color: #718096; display: flex; justify-content: space-between; align-items: center; }
         .tag { padding: 4px 10px; border-radius: 12px; font-weight: bold; }
         .tag.es { background: #fed7d7; color: #c53030; }
         .tag.interview { background: #c3dafe; color: #434190; }
@@ -30,7 +33,7 @@
     <p class="description">ChatGPTやClaudeを活用して、就活を有利に進めるためのプロンプトまとめ</p>
     
     <div class="controls">
-        <input type="text" id="searchInput" class="search-box" placeholder="キーワードで探す...">
+        <input type="text" id="searchInput" class="search-box" placeholder="キーワードで探す（例：志望動機、自己PR）...">
         <div class="filters" id="checkboxContainer">
             <label><input type="checkbox" value="es" checked> ES作成・添削</label>
             <label><input type="checkbox" value="interview" checked> 面接対策</label>
@@ -38,15 +41,13 @@
         </div>
     </div>
 
-    <div id="newsContainer" class="news-list"></div>
+    <div id="newsContainer" class="news-list">
+        <!-- 記事がここに表示されます -->
+    </div>
 </div>
 
 <script>
-    const newsData = [
-        { title: "【コピペでOK】ChatGPTに自己PRをブラッシュアップさせる最強プロンプト", category: "es", categoryName: "ES作成・添削", date: "2026-10-12", url: "#" },
-        { title: "AIを模擬面接官にする方法！深掘り質問で面接対策を完璧に", category: "interview", categoryName: "面接対策", date: "2026-10-11", url: "#" },
-        { title: "志望企業のIR情報をChatGPTに読み込ませて企業研究を時短するコツ", category: "research", categoryName: "企業研究・自己分析", date: "2026-10-10", url: "#" }
-    ];
+    let newsData = []; // 最初は空っぽにしておく
 
     const newsContainer = document.getElementById('newsContainer');
     const searchInput = document.getElementById('searchInput');
@@ -64,6 +65,7 @@
         filteredNews.forEach(news => {
             const card = document.createElement('a');
             card.href = news.url;
+            card.target = "_blank"; // 別タブで開く
             card.className = 'news-card';
             card.innerHTML = `
                 <h2 class="news-title">${news.title}</h2>
@@ -74,11 +76,26 @@
             `;
             newsContainer.appendChild(card);
         });
+
+        if(filteredNews.length === 0) {
+            newsContainer.innerHTML = '<p style="text-align:center; color:#718096;">条件に一致する記事がありません。</p>';
+        }
     }
 
     searchInput.addEventListener('input', renderNews);
     checkboxes.forEach(cb => cb.addEventListener('change', renderNews));
-    renderNews();
+
+    // 🌟自動収集したファイルを読み込む魔法
+    fetch('news_data.json')
+        .then(response => response.json())
+        .then(data => {
+            newsData = data; // 読み込んだデータをサイトにセット
+            renderNews();    // 画面に表示
+        })
+        .catch(error => {
+            console.error("エラー:", error);
+            newsContainer.innerHTML = '<p style="text-align:center; color:red;">データの読み込みに失敗しました。</p>';
+        });
 </script>
 
 </body>
