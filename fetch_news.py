@@ -4,7 +4,6 @@ import xml.etree.ElementTree as ET
 import json
 import re
 
-# 1. 従来のAIプロンプト検索設定
 prompt_urls = {
     "intern": ("インターン対策", "ChatGPT インターン 就活"),
     "es": ("ES作成・添削", "ChatGPT ES 添削 就活"),
@@ -16,20 +15,20 @@ prompt_urls = {
     "prompt": ("有用AIプロンプト", "ChatGPT プロンプト 就活")
 }
 
-# 2. 連携企業のサンプルリスト（シンプルに企業名だけで検索します）
+# IR情報を確実に拾うため「(決算 OR 業績 OR プレスリリース)」という条件を追加
 companies = [
-    {"name": "任天堂", "code": "7974", "query": "任天堂"},
-    {"name": "ソニーグループ", "code": "6758", "query": "ソニーグループ"},
-    {"name": "トヨタ自動車", "code": "7203", "query": "トヨタ自動車"}
+    {"name": "任天堂", "code": "7974", "query": "任天堂 (決算 OR 業績 OR プレスリリース)"},
+    {"name": "ソニーグループ", "code": "6758", "query": "ソニーグループ (決算 OR 業績 OR プレスリリース)"},
+    {"name": "トヨタ自動車", "code": "7203", "query": "トヨタ自動車 (決算 OR 業績 OR プレスリリース)"}
 ]
 
 news_data = []
 month_map = {"Jan":"01", "Feb":"02", "Mar":"03", "Apr":"04", "May":"05", "Jun":"06", "Jul":"07", "Aug":"08", "Sep":"09", "Oct":"10", "Nov":"11", "Dec":"12"}
 
-# --- A. プロンプト記事（Web & YouTube）の取得 ---
+# YouTubeの検索条件に「-広告 -PR -CM -宣伝」を追加してノイズを完全ブロック
 sources = [
     {"type": "web", "query_suffix": "when:1y"},
-    {"type": "youtube", "query_suffix": "when:1y site:youtube.com"}
+    {"type": "youtube", "query_suffix": "when:1y site:youtube.com -広告 -PR -CM -宣伝"}
 ]
 
 for src in sources:
@@ -62,17 +61,15 @@ for src in sources:
         except Exception as e:
             print(f"プロンプト取得エラー ({category}): {e}")
 
-# --- B. 連携企業のIR・ニュース情報の取得 ---
+# 連携企業のIR情報の取得
 for comp in companies:
     try:
-        # 検索条件をシンプルにしてヒット率を上げる
         ir_url = f"https://news.google.com/rss/search?q={urllib.parse.quote(comp['query'])}&hl=ja&gl=JP&ceid=JP:ja"
         req = urllib.request.Request(ir_url, headers={'User-Agent': 'Mozilla/5.0'})
         
         with urllib.request.urlopen(req) as response:
             root = ET.fromstring(response.read())
             
-            # 株価取得（失敗してもエラーで止まらないようにする）
             stock_price = "---"
             try:
                 yf_url = f"https://finance.yahoo.co.jp/quote/{comp['code']}.T"
@@ -80,38 +77,4 @@ for comp in companies:
                 with urllib.request.urlopen(yf_req) as yf_res:
                     html_content = yf_res.read().decode('utf-8')
                     price_match = re.search(r'itemprop="price"[^>]*content="([0-9,\.]+)"', html_content)
-                    if price_match:
-                        stock_price = price_match.group(1)
-            except:
-                pass
-
-            for index, item in enumerate(root.findall('./channel/item')[:5]):
-                title = item.find('title').text
-                link = item.find('link').text
-                pub_date = item.find('pubDate').text
-                
-                day = pub_date[5:7]
-                month = month_map[pub_date[8:11]]
-                year = pub_date[12:16]
-                
-                news_data.append({
-                    "title": title,
-                    "category": "company",
-                    "categoryName": f"{comp['name']} IR",
-                    "date": f"{year}/{month}/{day}",
-                    "url": link,
-                    "rank": index,
-                    "source": "ir",
-                    "companyName": comp['name'],
-                    "code": comp['code'],
-                    "stockPrice": stock_price,
-                    "stockChange": 0
-                })
-    except Exception as e:
-        print(f"企業ニュース取得エラー ({comp['name']}): {e}")
-
-# データを保存
-with open('news_data.json', 'w', encoding='utf-8') as f:
-    json.dump(news_data, f, ensure_ascii=False, indent=2)
-
-print("データの取得が完了しました！")
+                    if price
