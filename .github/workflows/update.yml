@@ -1,0 +1,31 @@
+name: Update Prompts
+
+on:
+  schedule:
+    - cron: '0 22 * * *' # 日本時間の毎日朝7時に実行
+  workflow_dispatch: # 手動で実行できるボタンを作る
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Pythonの準備
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: プログラムを実行して記事を集める
+      run: python fetch_news.py
+      
+    - name: 集めたデータをリポジトリに保存する
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add news_data.json
+        git commit -m "最新のプロンプト記事に更新" || exit 0
+        git push
