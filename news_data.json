@@ -171,11 +171,11 @@
     "source": "web"
   },
   {
-    "title": "大学生が見た「ChatGPTに丸投げ」就活の末路。コピペES、セリフ丸暗記で「思考停止」…AI就活の落とし穴 - Business Insider Japan",
+    "title": "就活はAIにおまかせ？ 「チャピる」学生たちが恐れる「ギュられる」時代（AERA DIGITAL） - Yahoo!ニュース",
     "category": "research",
     "categoryName": "企業研究",
-    "date": "2026/01/02",
-    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9Eek9DS1lIUDhtTEt5RU9ISFFMR1pDSmJpWTJJMjZsWjJkbHpybXAwb0w4U2MtWmJnR1M0UmhuOUNNQ1Z1Q2VBOFR4WXJwaDJfdEZlN3BBTGpJeWxOUUFCQlpiRFVwMHdsMUpOY0V6NGRTOTZIWWc?oc=5",
+    "date": "2026/10/23",
+    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9LMGFQZkJPZEd2elFybzRoX3VjYWI1Y0RaQlMxOEllYWdkQUs0eTFYX1lQR05iSjFOX3oyOGF5SmplRVpoR1BrNFlOZnlVa1V2UGxtVDJmM3pBZGxSbU5Rd19SZko2OFJiTEl3OTJiTm1HMHZsTEYzNDI4MjJCSGs?oc=5",
     "rank": 2,
     "source": "web"
   },
@@ -189,20 +189,20 @@
     "source": "web"
   },
   {
-    "title": "就活はAIにおまかせ？ 「チャピる」学生たちが恐れる「ギュられる」時代 - AERA DIGITAL",
-    "category": "research",
-    "categoryName": "企業研究",
-    "date": "2026/10/22",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9GQVpXUHBoTFY4R0FfM29Ja1hLMW9OQlVmcjZkbTVDazczUVFydUpXcEdMZVBqYnRMVFRNb0hUN0xIejhuM0VWWjFNODdJVUkxQXNlZWVTdVAzQQ?oc=5",
-    "rank": 4,
-    "source": "web"
-  },
-  {
     "title": "企業研究の難しさ1位は「どの情報を信用すればよいか分からない」26.0％ Z世代の採用情報収集の実態が判明 - ニコニコニュース",
     "category": "research",
     "categoryName": "企業研究",
     "date": "2026/10/19",
     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE52bjN5VnJjNnFWMzRmRWNJWHJZTVF3YWhjZHdVbUI1ZHNUZlpZVVdnOUdIbmFGNmRiTHc0bXVuSS12X29UUVpJcWZ2MnRHTHFEay1oLQ?oc=5",
+    "rank": 4,
+    "source": "web"
+  },
+  {
+    "title": "【就活生のAI利用はもう常識!?】就職活動での生成AI活用実態調査 | ナイル株式会社のプレスリリース - PR TIMES",
+    "category": "research",
+    "categoryName": "企業研究",
+    "date": "2026/04/28",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5JQVl3ODFrS3E0STI1UzdmSHQ4b3poUU9LTFc3MkFlNUV5NGpBQVVFZnk1NERxbVE3MnVRc3JhZUxoMkVzRlBVazdZUUdfZGRnQU1Td2FnV2doN05hNlZHNlNCbTNhWUxCSnc?oc=5",
     "rank": 5,
     "source": "web"
   },
@@ -279,30 +279,21 @@
     "source": "web"
   },
   {
-    "title": "【国内初※】就活支援AI「Careerbot」、ChatGPTプラグインとして正式公開 | 株式会社キャリアボットのプレスリリース - PR TIMES",
-    "category": "prompt",
-    "categoryName": "有用AIプロンプト",
-    "date": "2026/08/28",
-    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE51QkxDZ3VSTEJKOW05SjRWNndoT1BEZ25sdFhZLTBqZlVZUXlQbkdxQ1pnUmNTT1g5UjRCRG5sUnpldk1ycklzNlhrOEkxTzRzQnFxUEVLMTRkZ2J3ckpTQmZSaERQU2xIVXc?oc=5",
-    "rank": 2,
-    "source": "web"
-  },
-  {
     "title": "授業は聞かない、デート準備もAI任せ？Z世代大学生へ聞いた「リアルなAI活用術」 - 株式会社ヴァリューズ",
     "category": "prompt",
     "categoryName": "有用AIプロンプト",
     "date": "2026/01/20",
     "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB3X1E4ZUUwWjNRaHZZeERmZmMtWkE4eUE0eEphUENpSVh2YWhCZWNVbUdNQkx1QVhZM1Z3ak56eWh3RGY3cmVMdjZGT0x4NW96M0tPa0R1MA?oc=5",
-    "rank": 3,
+    "rank": 2,
     "source": "web"
   },
   {
-    "title": "【解決済み】AIとの会話、実は“筒抜け”だった？　「ChatGPT」に見つかった、“たった1つのプロンプト”で始まるデータ流出の仕組み（1/2） | AI ねとらぼ - ねとらぼ",
+    "title": "【国内初※】就活支援AI「Careerbot」、ChatGPTプラグインとして正式公開 | 株式会社キャリアボットのプレスリリース - PR TIMES",
     "category": "prompt",
     "categoryName": "有用AIプロンプト",
-    "date": "2026/04/09",
-    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE13clItX3pENkt3WnoyMnNVVy1melg2ZGhmcmdCWG9xdk1teGVVSUU4ZU9wRlNkeS1HRmpyMnQxWk1IcDczVWQ4WTltcXc0RklKSmktWjBya0UyLWdtQXfSAWNBVV95cUxOS0wwd1FWUDhhWUJSVnFDc19HQmNzV2xMRlVUaGtEWmJubTBYSTNaSG1TUEc4ckFHVUdYeUtQNFVWX3FwMDctVWlSTVpfVXRlTmhVNU5pa2tob2k3UWpXNE1TRjg?oc=5",
-    "rank": 4,
+    "date": "2026/08/28",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE51QkxDZ3VSTEJKOW05SjRWNndoT1BEZ25sdFhZLTBqZlVZUXlQbkdxQ1pnUmNTT1g5UjRCRG5sUnpldk1ycklzNlhrOEkxTzRzQnFxUEVLMTRkZ2J3ckpTQmZSaERQU2xIVXc?oc=5",
+    "rank": 3,
     "source": "web"
   },
   {
@@ -311,6 +302,15 @@
     "categoryName": "有用AIプロンプト",
     "date": "2026/05/12",
     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5CS01MY3ViSm81ZGhLZFIzRUZaQkRZekZrakRuN2tUZ0xnamRiZ2cxd0dENTNwSGlrM0xOWjE5TXd0cVZ4cklaVjJBUzFqMWFhc2s4?oc=5",
+    "rank": 4,
+    "source": "web"
+  },
+  {
+    "title": "【解決済み】AIとの会話、実は“筒抜け”だった？　「ChatGPT」に見つかった、“たった1つのプロンプト”で始まるデータ流出の仕組み（1/2） | AI ねとらぼ - ねとらぼ",
+    "category": "prompt",
+    "categoryName": "有用AIプロンプト",
+    "date": "2026/04/09",
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE13clItX3pENkt3WnoyMnNVVy1melg2ZGhmcmdCWG9xdk1teGVVSUU4ZU9wRlNkeS1HRmpyMnQxWk1IcDczVWQ4WTltcXc0RklKSmktWjBya0UyLWdtQXfSAWNBVV95cUxOS0wwd1FWUDhhWUJSVnFDc19HQmNzV2xMRlVUaGtEWmJubTBYSTNaSG1TUEc4ckFHVUdYeUtQNFVWX3FwMDctVWlSTVpfVXRlTmhVNU5pa2tob2k3UWpXNE1TRjg?oc=5",
     "rank": 5,
     "source": "web"
   },
@@ -333,21 +333,12 @@
     "source": "youtube"
   },
   {
-    "title": "モビリティ業界×ソフトウェア開発の最前線 【パナソニック オートモーティブシステムズ Tech Day】 - YouTube",
+    "title": "【本当は教えたくない】知識ゼロでも高時給案件が見つかる「LinkedIn」の稼ぎ方を教えます。 - YouTube",
     "category": "intern",
     "categoryName": "インターン対策",
-    "date": "2025/11/19",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBnTU5zVWlERXp0bWI5S2QtQ1VySENrc2R0WjhueXY5eG1oMnFmdHJUeFR2WEpCV3NmYkx0aXFUTUZTbEhzWkJINUZEb0p3MS1yRUhzOG5n?oc=5",
+    "date": "2026/03/11",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1BZzFGek9zeTFVcjBFakJDbkppbHczejkzOElMMzNaWXU5RC02aHM5WkhPUlFtUXpYNXV2Qzh2ekZucVVBUThfNElIYkI1dVlyNXFtTWR3?oc=5",
     "rank": 2,
-    "source": "youtube"
-  },
-  {
-    "title": "【28卒外資アセマネ・ヘッジファンドまだ間に合う！】フィデリティ、Jane Street 、Point72、JPモルガンアセマネなど内定戦略 - YouTube",
-    "category": "intern",
-    "categoryName": "インターン対策",
-    "date": "2026/10/30",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5XX0ZCYmdGYS1TSGczLWVpcWlPN1NuZmpiNU1xeDJGSFNrc2x2WnhMWWFEQ09TY0RNLTJsQndpWE14dVZYa0xLT2tmTk44WkNEVjN1QXJn?oc=5",
-    "rank": 3,
     "source": "youtube"
   },
   {
@@ -356,7 +347,7 @@
     "categoryName": "インターン対策",
     "date": "2026/10/02",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE54bXZOLVhkNTUtSjdSNmx3VnJOVkxIczJwYVA5LTNHd194MUJlLVRtcmhiZGIzQ3Z4NXJPaFNtT3lYXzVEblFCSk5EUEp5bktrcG95UkNn?oc=5",
-    "rank": 4,
+    "rank": 3,
     "source": "youtube"
   },
   {
@@ -365,6 +356,15 @@
     "categoryName": "インターン対策",
     "date": "2026/03/14",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5wcEhRNW9aQThyNHZrM3dmcWE5bDhhTlhKVmtGOV9NbkRSVS1aRWhWX3hSUnBMYVV0YVFWQUtTeDlFdE8xOXcycEVMYlJNMXRtNkxzQ1Bn?oc=5",
+    "rank": 4,
+    "source": "youtube"
+  },
+  {
+    "title": "スピノザ - YouTube",
+    "category": "intern",
+    "categoryName": "インターン対策",
+    "date": "2026/10/04",
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5TT2xGUHdRZVlQRmJhWUl1Yks4cTZXelE5QXJ4Z3d4bHZOZEF6bE04aU1aS0MzZWhoZzEwMndjQjZ5dGkxd3FVQVIxcnFRZmFKb3J3VS1XTkxnRC1TX1B2ZDJmWDBLYnN4X1R4TjZIcw?oc=5",
     "rank": 5,
     "source": "youtube"
   },
@@ -414,12 +414,21 @@
     "source": "youtube"
   },
   {
+    "title": "【実演】AI面接前に必見！見られる3つのポイントと今すぐできる対策 - YouTube",
+    "category": "interview",
+    "categoryName": "面接対策",
+    "date": "2026/07/08",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1hUVhnakdWczQ0MGpnR1EyMUU0NGUzQzRfT053X1kzclZVTWVDM2NYbVljMS1YeUNKRDFteTY4WE5tUVNNWk1EUGRoRjVxWTBDWmxVSjNn?oc=5",
+    "rank": 2,
+    "source": "youtube"
+  },
+  {
     "title": "【新卒採用】就活生のAI利用は9割以上。人事に必要な採用選考の3つの対策 - YouTube",
     "category": "interview",
     "categoryName": "面接対策",
     "date": "2026/03/18",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9LS0IwUTM3SDVIQkJxZ2NXWjhGdjdlUTVZRG10dzNxYU5BaHhndDZQc2RobG11WjMyNEtZODhMQmpLMWhnMjBKNGU5WmZtUERYeURZZzln?oc=5",
-    "rank": 2,
+    "rank": 3,
     "source": "youtube"
   },
   {
@@ -428,24 +437,15 @@
     "categoryName": "面接対策",
     "date": "2026/06/03",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5TNjVHV2JIQTRJTGhuTndwMWo2NmRYUG5Zcm5SalhQbkFNX0hfVG1raFZRTjVlbXBVYm9BZTNRQVU2TzJZM0QyZU5OcW1nZVJQNktfSEpB?oc=5",
-    "rank": 3,
-    "source": "youtube"
-  },
-  {
-    "title": "採用面接で志願者が“AIなりすまし”？呼びかけに応じず語り続け…言葉遣いに違和感 専門家「背後に北朝鮮」との指摘も 外務省も注意喚起（2026年09月16日） - YouTube",
-    "category": "interview",
-    "categoryName": "面接対策",
-    "date": "2026/09/16",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9vekRpNy13Q3d2dzlpTlRLeHhmcFJ2SWdHNmNzMnFtQXR5c0dneXNneHdsY1JDVlJqYXhPbmlWaG9PMXRLaWh0dlYtdlhrX3l6Ylc3dy1n?oc=5",
     "rank": 4,
     "source": "youtube"
   },
   {
-    "title": "【衝撃】Claude Design × gpt image 2で外注で100万レベルのWebサイトを作成する様子を日本一わかりやすく実演解説します!【AI活用】 - YouTube",
+    "title": "【日東駒専からアクセンチュアって行けるの？】アクセンチュアテック職の新卒出身大学を大公開! - YouTube",
     "category": "interview",
     "categoryName": "面接対策",
-    "date": "2026/07/25",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAxZWQ5VndNQ1JIQ08wckE5ckw4eFBQUzh6R0VmRDVlRWg0Q1hvYmh0ek1FRUk0TXlycEtwSzVBSGVHZElZSXl5a1FMZnphVjk1QS1OXzJ3?oc=5",
+    "date": "2026/02/07",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBZUEJXN0dXMGlaSGg1UTBiRVUzcmlUOUlMemx4VmZiTDJwdlZWbk5DdkJkLTB2ZlYzWWl5M2k1TFBGamlQWEhlbnNOb3FRRUh4WU5BTExR?oc=5",
     "rank": 5,
     "source": "youtube"
   },
@@ -477,20 +477,20 @@
     "source": "youtube"
   },
   {
-    "title": "【2026おかやまWeb交流会】【企業説明】双葉電機(株) - YouTube",
-    "category": "research",
-    "categoryName": "企業研究",
-    "date": "2026/10/09",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1tSXp0QVBzYUFyY250bjVwMVkxcEhfSGlSbnhtWjJSd2ZVN0tXSGxxYTNQeEhubHhHQVlOcjA3YTRHWHdWQnAxZl9uODFhb2FzcW5JODdR?oc=5",
-    "rank": 3,
-    "source": "youtube"
-  },
-  {
     "title": "【会社紹介】文系・未経験歓迎！創業50期のIT企業を社長自ら案内します - YouTube",
     "category": "research",
     "categoryName": "企業研究",
     "date": "2026/05/14",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA3QnhtSUFxZTNCVFJ5U2hVeGl3Wjc2UF93N2hNdkZVX19jV0tGNFVITGYwbFkxazE3NUFpSThfbWRPSjlIcGo5dWVwcWY2NXlFNUs2bnJR?oc=5",
+    "rank": 3,
+    "source": "youtube"
+  },
+  {
+    "title": "【2026おかやまWeb交流会】【企業説明】双葉電機(株) - YouTube",
+    "category": "research",
+    "categoryName": "企業研究",
+    "date": "2026/10/09",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1tSXp0QVBzYUFyY250bjVwMVkxcEhfSGlSbnhtWjJSd2ZVN0tXSGxxYTNQeEhubHhHQVlOcjA3YTRHWHdWQnAxZl9uODFhb2FzcW5JODdR?oc=5",
     "rank": 4,
     "source": "youtube"
   },
@@ -522,21 +522,12 @@
     "source": "youtube"
   },
   {
-    "title": "YourConnect機能紹介動画 - YouTube",
-    "category": "self_analysis",
-    "categoryName": "自己分析",
-    "date": "2026/02/02",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBXRFdKeExqYVR0cm5WYW1ub1l1RElVVGlNQkwwdHhlSDNucWR3bVBtdXl1ekp2ZHJUVDB0MTRXWWJMUkNzODA1VkN2ZVRtMWN3OVVvOHV3?oc=5",
-    "rank": 2,
-    "source": "youtube"
-  },
-  {
     "title": "一級建築士 設計製図 再受験｜去年の敗因を6つの型で特定する - YouTube",
     "category": "self_analysis",
     "categoryName": "自己分析",
     "date": "2026/07/29",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE96bWs0b0FyLURheUp2OV9ycXlYeE5WdVZfaURMamtwMngzcGxWZXBzNGhPSTV0dzdTdG5QV0ZVZHU5dVNPQ0tfV3l5UXFqbmRXajF1Q0pn?oc=5",
-    "rank": 3,
+    "rank": 2,
     "source": "youtube"
   },
   {
@@ -545,6 +536,15 @@
     "categoryName": "自己分析",
     "date": "2026/10/28",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8wR2p5NllQNXc3aXc4ZjZQbDZkSmVGTG9GMGtVSnUtWlRYbkI5d0dlZUxUUk1YMXdlWXRGcFg2enFHQ3ViMkpPc2k4OXozNmVJRUFxOE9B?oc=5",
+    "rank": 3,
+    "source": "youtube"
+  },
+  {
+    "title": "【試験直前】あなたの論述答案は今、何点？｜【協議会版】国家資格キャリコン論述・3回実力診断をはじめます - YouTube",
+    "category": "self_analysis",
+    "categoryName": "自己分析",
+    "date": "2026/10/05",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE41MWJ1UUdjOE54c1ZsTGpJVzlfLXNIeUwwYXFsdm16VG1qMmp2TnNoNDJOMElhend3QXJlX3ZoVDh0TGNNRXBTb3NhVWJ6YnJZV3BxQkN3?oc=5",
     "rank": 4,
     "source": "youtube"
   },
@@ -603,11 +603,11 @@
     "source": "youtube"
   },
   {
-    "title": "【一点突破講座】ChatGPTはどう生まれた？GPT-1・GPT-2・GPT-3の進化を解説 - YouTube",
+    "title": "2.UNITE by Yappliとは - YouTube",
     "category": "prompt",
     "categoryName": "有用AIプロンプト",
-    "date": "2026/09/23",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE03ejBZZWdHUmhfRzFsZTJjV2IwaE9oNWQzM1JTUmx3UVBZUmIyem5tbE9zNEJXSDNYMm5ESXBrSm16SEtHN09IdlVSUi1wY2cyUmIwQ2VR?oc=5",
+    "date": "2026/07/10",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5peFpPRnVpZ0FjNGxGR1E2czIwc0xwLWcycUhmU1lMNzRjX3BJSGtRZklVN21nQ0FjTlRNeUUzUjFMakowck9WejFsSW0wWjlubzRmajh3?oc=5",
     "rank": 5,
     "source": "youtube"
   },
@@ -660,11 +660,11 @@
     "stockPrice": "---"
   },
   {
-    "title": "【決算速報】ソニーＧ、今期最終を10％上方修正・最高益予想を上乗せ(株探ニュース) - Yahoo!ファイナンス",
+    "title": "ソニーグループ(株)【6758】：決算情報 - Yahoo!ファイナンス",
     "category": "company",
     "categoryName": "ソニーグループ IR",
     "date": "2026/11/05",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQa1BRekZHaXp5ZTluU19MVG9ybTlEYjQydjVCNVlhWkVaVHZrZUpha2tJR3VtYUYtMEpQWlZPVWpKSVlxOWhtTXlMaENJMzBYeTl6Zlc1QndaYUhxb2I3RGtYTV9ZYzRnRU14eDZheUd6ZnBCOGwxOEVSUHRtNzVPd3RYU3c3c3M?oc=5",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5ydERnNjBuRmF5MHZsYUU3M2lHaVRBajFFRGhnSk1zZ3dyOENxbVllZklTTlFBVkZyZTdwLUZ2YWRqUjA4bGllUzBhZ3RweXNZSDQxVGw4T1dJQ2VIek11bQ?oc=5",
     "rank": 0,
     "source": "ir",
     "companyName": "ソニーグループ",
@@ -672,11 +672,11 @@
     "stockPrice": "---"
   },
   {
-    "title": "決算:ソニーＧ純利益29%増に上振れ 27年3月期、「スパイダーマン」好調 - 日本経済新聞",
+    "title": "ソニーグループ[6758]：2026年度第２四半期連結業績概要（決算説明会資料） 2026年11月5日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
     "category": "company",
     "categoryName": "ソニーグループ IR",
     "date": "2026/11/05",
-    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5lcWN3TU9Fa0M2cVF5dlFmRU5OeTZkWlM2VmRtai1US25kM3hhdUFSRUl4ZU1JR3Y5YlFiVXRWblRSR2VXa2RHQmdhUExQTVhFaTM4V20wSDNsNkpRNXgxMlpIY0xVR3M2aTFyYg?oc=5",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE85VjZhTW1CcDhuYXFGQ0pNUEs1aGdMTW9PZGpvMllUR3BSQThGVGNEeWJvTmhndmpxTEtjN2xmdXV0TTNSeVVtWVdkaWMtei16WFVyazZqYnVpb0NZV3BNSzJjb0JvdnBUWGc?oc=5",
     "rank": 1,
     "source": "ir",
     "companyName": "ソニーグループ",
